@@ -16,7 +16,8 @@ namespace ScrabbleGame.Objects
     public int AddScore()
     {
       int _userScore = 0;
-      char[] letters = _originalWord.ToCharArray();
+      string upperWord = _originalWord.ToUpper();
+      char[] letters = upperWord.ToCharArray();
       // Console.WriteLine(letters[0]);
       for(int i = 0; i < letters.Length; i++)
       {

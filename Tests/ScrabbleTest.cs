@@ -9,7 +9,7 @@ namespace ScrabbleGame.Objects
     [Fact]
     public void AddScore_ForSingleLetterReturnValueScore_1()
     {
-      Scrabble originalWord = new Scrabble("");
+      Scrabble originalWord = new Scrabble("k");
       Assert.Equal(5, originalWord.AddScore());
     }
   }
