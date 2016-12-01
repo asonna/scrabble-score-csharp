@@ -1,19 +1,22 @@
-using Nancy; //tells the module to use Nancy;
-using System.Collections.Generic; //tells the module to use the generic c# commands and methods
-using ScrabbleGame.Objects; //tells the module to use the namespace from Scrabble.cs
+using Nancy;
+using System.Collections.Generic;
+using ScrabbleGame.Objects;
 
-namespace Scrabble
+namespace ScrabbleGame
 {
+  public class HomeModule : NancyModule
   {
-    public class HomeModule : NancyModule
+    public HomeModule()
     {
-      public HomeModule()
+      Get["/"] = _ =>
       {
-        Get["/"] = _ =>
-        {
-          return View[index.cshtml];
-        };
-      }
+        return View["index.cshtml"];
+      };
+      Post["/result"] = _ =>
+      {
+        Scrabble originalWord = new Scrabble(Request.Form["word"]);
+        return View["result.cshtml", originalWord];
+      };
     }
   }
 }

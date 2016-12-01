@@ -7,6 +7,8 @@ loop through letters array, if == add to userScore;
 return userScore;
 put userScore onto page;
 
+
+
 Specifications:
 
 Spec 1: user enters a single letter that returns a score;
