@@ -1,0 +1,36 @@
+create form to input a word;
+create variable to hold word;
+
+create variable to hold userScore;
+split word apart into letters array;
+loop through letters array, if == add to userScore;
+return userScore;
+put userScore onto page;
+
+Specifications:
+
+Spec 1: user enters a single letter that returns a score;
+  Input: A;
+  Output: 1;
+
+  Input: J;
+  Output: 8;
+
+  Input: P;
+  Output: 3;
+
+Spec 2: user enters multiple letters, the scores are added together;
+  Input: RF;
+  Output: 1 + 4 = 5;
+
+  Input: EPICODUS
+  Input: 1 + 3 + 1 + 3 + 1 + 2 + 1 + 1 = 13;
+
+Spec 3: check for single word with no spaces
+  Input: "gr eat"
+  Output "Words may not have spaces."
+
+  Input: " great"
+  Output "Words may not have spaces."
+
+Spec 4: check for numbers and special characters
