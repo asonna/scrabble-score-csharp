@@ -7,6 +7,7 @@ namespace ScrabbleGame.Objects
   {
     private string _originalWord;
     private int _userScore;
+    private Dictionary<list<string>, int> myDictionary = new Dictionary<list<string>, int>();
 
     public Scrabble(string originalWord)
     {
@@ -16,38 +17,29 @@ namespace ScrabbleGame.Objects
     public int AddScore()
     {
       int _userScore = 0;
+      myDictionary =
+      {
+        {{"A","E","I","O","U",""L"","N","T"}, 1},
+        {{"D","G"}, 2},
+        {{"B","C","M","P"}, 3},
+        {{"F","H","V","W","Y"}, 4},
+        {{"K"}, 5},
+        {{"J","X"}, 8},
+        {{"Q","Z"}, 10},
+        {{" ", ",", ".", "-", "/", "'", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, 0}
+      }
       string upperWord = _originalWord.ToUpper();
-      char[] letters = upperWord.ToCharArray();
+
+      char[] letters = upperWord.ToCharArray();   dolphin
       // Console.WriteLine(letters[0]);
       for(int i = 0; i < letters.Length; i++)
       {
-        if (letters[i] == 'A' || letters[i] == 'E' || letters[i] == 'I' || letters[i] == 'O' || letters[i] == 'U' || letters[i] == 'L' || letters[i] == 'N' || letters[i] == 'R' || letters[i] == 'S' || letters[i] == 'T')
+        foreach (string element in Dictionary<list<string>, int> myDictionary)
         {
-          _userScore += 1;
-        }
-        else if (letters[i] == 'D' || letters[i] == 'G')
-        {
-          _userScore += 2;
-        }
-        else if (letters[i] == 'B' || letters[i] == 'C' || letters[i] == 'M' || letters[i] == 'P')
-        {
-          _userScore += 3;
-        }
-        else if (letters[i] == 'F' || letters[i] == 'H' || letters[i] == 'V' || letters[i] == 'W' || letters[i] == 'Y')
-        {
-          _userScore += 4;
-        }
-        else if (letters[i] == 'K')
-        {
-          _userScore += 5;
-        }
-        else if (letters[i] == 'J' || letters[i] == 'X')
-        {
-          _userScore += 8;
-        }
-        else if (letters[i] == 'Q' || letters[i] == 'Z')
-        {
-          _userScore += 10;
+          if (letters[i] == element)
+          {
+            _userScore += element.value
+          }
         }
       }
       return _userScore;
